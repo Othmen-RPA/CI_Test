@@ -11,7 +11,6 @@ pipeline {
 	        UIPATH_ORCH_LOGICAL_NAME = "talanpsrnaod"
 	        UIPATH_ORCH_TENANT_NAME = "TalanDefault"
 	        UIPATH_ORCH_FOLDER_NAME = "CICDFolder"
-			UIPATH_CREDENTIALS = credentials('0123456789')
 	    }
 	
 
@@ -58,7 +57,7 @@ pipeline {
 	                orchestratorTenant: "${UIPATH_ORCH_TENANT_NAME}",
 	                folderName: "${UIPATH_ORCH_FOLDER_NAME}",
 	                environments: 'DEV',
-	               //credentials: [$class: 'UserPassAuthenticationEntry', credentialsId: '8DEv1AMNXczW3y4U15LL3jYf62jK93n5']
+	               // credentials: [$class: 'UserPassAuthenticationEntry', credentialsId: 'bVbBXtuNohD5vBlwfOZfRh0C5-PkvNyM_jmnJU-uvG8zJ'],
 	                credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: 'APIUserKey'),  
 					traceLevel: 'None',
 					entryPointPaths: 'Main.xaml'
