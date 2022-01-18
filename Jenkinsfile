@@ -11,6 +11,7 @@ pipeline {
 	        UIPATH_ORCH_LOGICAL_NAME = "talanpsrnaod"
 	        UIPATH_ORCH_TENANT_NAME = "TalanDefault"
 	        UIPATH_ORCH_FOLDER_NAME = "Default"
+			UIPATH_CREDENTIALS = credentials('0123456789')
 	    }
 	
 
@@ -25,6 +26,7 @@ pipeline {
 	                echo "Jenkins JOB Number ${env.BUILD_NUMBER}"
 	                echo "Jenkins JOB Name ${env.JOB_NAME}"
 	                echo "GitHub BranhName ${env.BRANCH_NAME}"
+					echo "Username $UIPATH_CREDENTIALS_USR"
 	                checkout scm
 	
 
@@ -57,7 +59,7 @@ pipeline {
 	                folderName: "${UIPATH_ORCH_FOLDER_NAME}",
 	                environments: 'DEV',
 	                //credentials: [$class: 'UserPassAuthenticationEntry', credentialsId: 'APIUserKey']
-	                credentials: Token(accountName: "othmen.rebai@talan.com", credentialsId: 'Welcomehome@123'), 
+	                credentials: Token(accountName: "$UIPATH_CREDENTIALS_USR", credentialsId: '$UIPATH_CREDENTIALS_PSW'), 
 					traceLevel: 'None',
 					entryPointPaths: 'Main.xaml'
 	

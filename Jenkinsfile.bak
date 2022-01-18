@@ -11,6 +11,7 @@ pipeline {
 	        UIPATH_ORCH_LOGICAL_NAME = "talanpsrnaod"
 	        UIPATH_ORCH_TENANT_NAME = "TalanDefault"
 	        UIPATH_ORCH_FOLDER_NAME = "Default"
+			UIPATH_CREDENTIALS = credentials('0123456789')
 	    }
 	
 
@@ -57,7 +58,7 @@ pipeline {
 	                folderName: "${UIPATH_ORCH_FOLDER_NAME}",
 	                environments: 'DEV',
 	                //credentials: [$class: 'UserPassAuthenticationEntry', credentialsId: 'APIUserKey']
-	                credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: 'APIUserKey'), 
+	                credentials: Token(accountName: "$UIPATH_CREDENTIALS_USR", credentialsId: '$UIPATH_CREDENTIALS_PSW'), 
 					traceLevel: 'None',
 					entryPointPaths: 'Main.xaml'
 	
