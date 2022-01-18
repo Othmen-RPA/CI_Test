@@ -47,7 +47,7 @@ pipeline {
 	        }
 			
 			
-				        stage('Deploy to Orchestrator') {
+			stage('Deploy to Orchestrator') {
 	            steps {
 	                echo "Deploying ${BRANCH_NAME} to UAT "
 	                UiPathDeploy (

@@ -57,7 +57,7 @@ pipeline {
 	                folderName: "${UIPATH_ORCH_FOLDER_NAME}",
 	                environments: 'DEV',
 	                //credentials: [$class: 'UserPassAuthenticationEntry', credentialsId: 'APIUserKey']
-	                credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: 'APIUserKey'), 
+	                credentials: Token(accountName: "othmen.rebai@talan.com", credentialsId: 'Welcomehome@123'), 
 					traceLevel: 'None',
 					entryPointPaths: 'Main.xaml'
 	
