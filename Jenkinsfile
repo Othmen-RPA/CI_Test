@@ -10,7 +10,7 @@ pipeline {
 	        UIPATH_ORCH_URL = "https://cloud.uipath.com/"
 	        UIPATH_ORCH_LOGICAL_NAME = "talanpsrnaod"
 	        UIPATH_ORCH_TENANT_NAME = "TalanDefault"
-	        UIPATH_ORCH_FOLDER_NAME = "Default"
+	        UIPATH_ORCH_FOLDER_NAME = "My Workspace"
 			UIPATH_CREDENTIALS = credentials('0123456789')
 	    }
 	
@@ -58,8 +58,8 @@ pipeline {
 	                orchestratorTenant: "${UIPATH_ORCH_TENANT_NAME}",
 	                folderName: "${UIPATH_ORCH_FOLDER_NAME}",
 	                environments: 'DEV',
-	                //credentials: [$class: 'UserPassAuthenticationEntry', credentialsId: 'APIUserKey']
-	                credentials: Token(accountName: "$UIPATH_CREDENTIALS_USR", credentialsId: '$UIPATH_CREDENTIALS_PSW'), 
+	               // credentials: [$class: 'UserPassAuthenticationEntry', credentialsId: '0123456789'],
+	                credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: '0123456789'),  
 					traceLevel: 'None',
 					entryPointPaths: 'Main.xaml'
 	
