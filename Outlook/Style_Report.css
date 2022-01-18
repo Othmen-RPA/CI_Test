@@ -1,0 +1,30 @@
+<style>
+<!-- 
+
+th, td
+{
+	border: solid black 1.0pt;
+}
+th 
+{
+	background:#4472c4;
+	color: white;
+
+}
+td
+{
+	text-align:center;
+	padding: 3px;
+}
+tr.A
+{
+	background:#d9e1f2;
+}
+table
+{
+	cellspacing: 0;	
+	border-spacing: 0;
+	border-collapse: collapse;
+	}
+-->
+</style>
